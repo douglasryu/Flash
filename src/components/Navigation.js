@@ -1,4 +1,5 @@
 import React from "react";
+import CategoryBar from "./CategoryBar";
 
 const Navigation = () => {
     return (
@@ -13,14 +14,7 @@ const Navigation = () => {
                 <button className="nav__item">Sign Up</button>
                 <button className="nav__item">View Cart</button>
             </div>
-            <div className="category__bar">
-                <div>Cameras</div>
-                <div>Lens</div>
-                <div>Tripods & Supports</div>
-                <div>Lighting & Studio</div>
-                <div>Bags & Cases</div>
-                <div>Camera Accessories</div>
-            </div>
+           <CategoryBar/>
         </>
     );
 }
