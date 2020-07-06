@@ -1,20 +1,6 @@
 import React from 'react'
 
-class ReviewDiv extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            // productID: this.props.productID
-        }
-    }
-
-   //Todo - get data from backend, set to this.state.reviews
-
-   //todo Post review function
-
-   //Todo, possible Edit/Delete functions
-
-    render(){
+const ReviewDiv = (props) =>{
         return(
             <div>
                 {/* Todo - map this.state.reviews for productID into separate divs */}
@@ -33,6 +19,12 @@ class ReviewDiv extends React.Component {
         )
     }
 
-}
+
+
+//Todo - get data from backend, set to this.state.reviews
+
+   //todo Post review function
+
+   //Todo, possible Edit/Delete functions
 
 export default ReviewDiv;
