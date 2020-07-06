@@ -1,6 +1,4 @@
 import React from "react";
-
-import CategoryBar from "./CategoryBar";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import SearchIcon from "@material-ui/icons/Search";
