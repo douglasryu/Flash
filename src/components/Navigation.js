@@ -1,28 +1,59 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import SearchIcon from "@material-ui/icons/Search";
 
-const Navigation = () => {
-    return (
-        <>
+import { logout } from "../actions/sessionActions";
+import { openModal } from "../actions/modalActions";
+
+const Navigation = props => {
+    const token = props.token;
+
+    if (!token) {
+        return (
             <div className="nav__bar">
-                <div className="nav__logo">FLASH</div>
+                <Link to="/" className="nav__logo">FLASH</Link>
+                <form>
+                    <SearchIcon />
+                    <input className="nav__search" type="text" placeholder="Search for an item"></input>
+                </form>
+                <button className="nav__item nav__account">Account</button>
+                <button className="nav__item" onClick={() => props.openModal("signin")}>Sign In</button>
+                <button className="nav__item" onClick={() => props.openModal("signup")}>Sign Up</button>
+                <button className="nav__item">View Cart</button>
+            </div>
+        );
+    } else {
+        return (
+            <div className="nav__bar">
+                <Link to="/" className="nav__logo">FLASH</Link>
                 <form>
                     <input className="nav__search" type="text" placeholder="Search for an item" />
                 </form>
                 <button className="nav__item">Account</button>
-                <button className="nav__item">Sign In</button>
-                <button className="nav__item">Sign Up</button>
+                <button className="nav__item" onClick={() => props.openModal("signin")}>Sign Out</button>
                 <button className="nav__item">View Cart</button>
             </div>
-            <div className="category__bar">
-                <div>Cameras</div>
-                <div>Lens</div>
-                <div>Tripods & Supports</div>
-                <div>Lighting & Studio</div>
-                <div>Bags & Cases</div>
-                <div>Camera Accessories</div>
-            </div>
-        </>
-    );
+        )
+    }
 }
 
-export default Navigation;
+const mapStateToProps = state => {
+    return {
+        // token: state.session.token
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        openModal: (modal) => dispatch(openModal(modal)),
+        logout: () => dispatch(logout())
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(
+    Navigation
+);
