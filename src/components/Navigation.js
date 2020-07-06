@@ -12,7 +12,7 @@ const Navigation = props => {
     if (!token) {
         return (
             <div className="nav__bar">
-                <Link to="/" className="nav__logo">FLASH</Link>
+                <Link to="/" className="nav__logo">FLASH<img className="logo" src={require("../assets/camera.png")} alt="logo" /></Link>
                 <form>
                     <SearchIcon />
                     <input className="nav__search" type="text" placeholder="Search for an item"></input>
