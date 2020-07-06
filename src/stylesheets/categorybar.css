@@ -17,12 +17,14 @@
 }
 
 
-.nav_dropdown:hover.dropdown_menu{
+/* .nav_dropdown:hover .dropdown_menu{
     display: block;
     background-color: chartreuse;
+} */
+
+.visible {
+    display: block;
 }
-
-
 
 .category__bar {
     display: flex;
