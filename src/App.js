@@ -8,7 +8,7 @@ const App = props => {
     return (
         <BrowserRouter>
             <Route exact path="/" component={MainPage} />
-            <Route exact path="/products/1" component={ProductPage} />
+            <Route path="/products/1" component={ProductPage} />
         </BrowserRouter>
     );
 
