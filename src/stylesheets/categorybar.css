@@ -1,0 +1,30 @@
+.nav_dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    background-color: blue;
+}
+
+.dropdown_menu li {
+    color: black;
+    background-color: cadetblue;
+    text-decoration: none;
+    padding: 12px 16px;
+}
+
+
+.nav_dropdown:hover.dropdown_menu{
+    display: block;
+    background-color: chartreuse;
+}
+
+
+
+.category__bar {
+    display: flex;
+    justify-content: space-evenly;
+}
