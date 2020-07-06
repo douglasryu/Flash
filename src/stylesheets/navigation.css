@@ -9,6 +9,11 @@
     margin-left: 20px;
 }
 
+.logo {
+    display: inline-block;
+    width: 30px;
+}
+
 .nav__search {
     margin-right: auto;
     border: 1px solid black;
