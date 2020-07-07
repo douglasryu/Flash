@@ -15,7 +15,7 @@ const Navigation = props => {
             <div className="nav__bar">
                 <Link to="/" className="nav__logo">FLASH<img className="logo" src={require("../assets/camera.png")} alt="logo" /></Link>
                 <form>
-                    <SearchIcon />
+                    <SearchIcon className="nav__search--icon" />
                     <input className="nav__search" type="text" placeholder="Search for an item"></input>
                 </form>
                 <button className="nav__item nav__account">Account</button>
@@ -31,7 +31,7 @@ const Navigation = props => {
                 <form>
                     <input className="nav__search" type="text" placeholder="Search for an item" />
                 </form>
-                <button className="nav__item">Account</button>
+                <button className="nav__item nav__account">Account</button>
                 <button className="nav__item" onClick={() => props.openModal("signin")}>Sign Out</button>
                 <button className="nav__item">View Cart</button>
             </div>
@@ -41,7 +41,7 @@ const Navigation = props => {
 
 const mapStateToProps = state => {
     return {
-        // token: state.session.token
+        token: state.session.token
     }
 }
 
