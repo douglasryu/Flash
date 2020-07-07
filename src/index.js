@@ -6,7 +6,10 @@ import "./stylesheets/reset.css";
 import "./stylesheets/index.css";
 import "./stylesheets/navigation.css";
 import "./stylesheets/modal.css";
+import "./stylesheets/main.css";
+import "./stylesheets/brandlogo.css";
 import "./stylesheets/productpage.css";
+
 import App from "./App";
 
 const store = configureStore();
