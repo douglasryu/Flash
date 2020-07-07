@@ -17,10 +17,12 @@ const Cart = (props) => {
                 {/*Will map user's cart from state*/}
                 <div className='cart__item'>
                     <div className='cart__item-img'>image</div>
-                    <div className='cart__item-name'>Product Name</div>
-                    <div className='cart__item-price'>$100.00</div>
+                    <div className='cart__item-nameprice-container'>
+                        <div className='cart__item-name'>Product Name</div>
+                        <div className='cart__item-price'>$100.00</div>
+                    </div>
                 </div>
-                <div>
+                <div className='cart__checkout'>
                     <button onClick={() => props.openModal("checkout")}>Checkout</button>
                 </div>
             </main>

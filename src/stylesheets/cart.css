@@ -36,3 +36,34 @@
     text-align: center;
     padding-bottom: 10px;
 }
+
+
+.cart__main{
+    padding: 20px 15%;
+
+}
+
+.cart__item{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 20px 20px;
+}
+
+.cart__item-image{
+    height: 100px;
+    width: 100px;
+}
+
+.cart__item-name{
+    padding-bottom: 10px;
+}
+
+.cart__checkout{
+    text-align: center;
+    display: block;
+    background-color: aqua;
+    margin: 0px auto 10px auto;
+    padding: 5px 102px 5px 102px;
+    width: 100px;
+}
