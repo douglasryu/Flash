@@ -17,18 +17,19 @@ const FeaturedItem = () => {
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 5
+            items: 3
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 5
+            items: 3
         }
     };
 
 
 
+
     return (
-        <Carousel className="featured__carousel" responsive={responsive} infinite >
+        <Carousel className="featured__carousel" responsive={responsive} infinite>
             <div className="featured__item"><img className="featured__item--img" src={require("../assets/carousel/fujifilm-x100v.jpg")} /></div>
             <div className="featured__item">Item 2</div>
             <div className="featured__item">Item 3</div>
