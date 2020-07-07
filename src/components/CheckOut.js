@@ -12,10 +12,10 @@ const CheckOut = props => {
     }
 
     return (
-        <div>
-            <div>Total</div>
-            <div>Payment Type: Card</div>
-            <button onClick={handleClick}>Checkout</button>
+        <div className='checkout__main'>
+            <div className='checkout__total'>Total</div>
+            <div className='checkout__payment'>Payment Type: Card</div>
+            <button className='checkout__button' onClick={handleClick}>Checkout</button>
         </div>
     )
 
