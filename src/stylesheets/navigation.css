@@ -1,7 +1,23 @@
 .nav__bar {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.category__bar {
-    display: flex;
+.nav__logo {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.nav__search {
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.nav__account {
+    margin-left: auto;
+}
+
+.nav__item {
+    margin-right: 20px;
 }
