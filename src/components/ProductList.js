@@ -22,7 +22,7 @@ const ProductList = (props) => {
         {list.map((product, i) => {
           let id = i;
           return (
-            <div id={id} className="category__list-product" key={i}>
+            <div key={id} className="category__list-product" key={i}>
               <div className="category__list-product-img">Image</div>
               <div className="category__list-nameprice-container">
                 <div className="category__list-product-name">
