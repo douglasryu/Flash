@@ -1,0 +1,37 @@
+.mainCarousel__container {
+    width: 60%;
+    margin: 40px auto 0px auto;
+}
+
+.mainCarousel__imgContainer {
+    height: 700px;
+    overflow: hidden;
+}
+
+.featured__carousel {
+    /* width: 80%; */
+    width: 1500px;
+    height: 200px;
+    margin: 20px auto 0px auto;
+}
+
+.featured__item {
+    background-color: yellow;
+    height: 200px;
+    /* width: 90%; */
+    width: 200px;
+    overflow: hidden;
+}
+
+.featured__item--img {
+    /* width: 300px; */
+}
+
+@media screen and (max-width: 1550px) {
+    .featured__carousel {
+    /* width: 80%; */
+    width: 800px;
+    height: 200px;
+    margin: 20px auto 0px auto;
+}
+}

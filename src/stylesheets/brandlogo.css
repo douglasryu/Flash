@@ -1,0 +1,40 @@
+.brand__logos--outer {
+    display: flex;
+    justify-content: center;
+}
+
+.brand__logos--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.brand__logo--canon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.brand__logo--nikon {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.brand__logo--sony {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.brand__logo--fujifilm {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.brand__logo--olympus {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.brand__logo--leica {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}

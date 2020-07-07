@@ -14,8 +14,8 @@
 .dropdown_menu {
     display: none;
     position: absolute;
+    z-index: 4;
 }
-
 
 .dropdown_menu li {
     color: #004387;
@@ -23,7 +23,6 @@
     padding: 12px 16px;
     background-color: #ffffff;
 }
-
 
 .nav_dropdown:hover .dropdown_menu{
     display: block;
