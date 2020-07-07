@@ -33,7 +33,7 @@ const Navigation = props => {
                 </form>
                 <button className="nav__item nav__account">Account</button>
                 <button className="nav__item" onClick={() => props.openModal("signin")}>Sign Out</button>
-                <button className="nav__item">View Cart</button>
+                <Link to='/cart' className="nav__item">View Cart</Link>
             </div>
         )
     }

@@ -4,6 +4,7 @@ import { closeModal } from "../actions/modalActions";
 
 import Signin from "./Signin";
 import Signup from "./Signup";
+import CheckOut from "./CheckOut";
 
 const Modal = props => {
     const { modal } = props;
@@ -18,6 +19,8 @@ const Modal = props => {
         case "signup":
             component = <Signup type={"signup"} />;
             break;
+        case "checkout":
+            component = <CheckOut type="checkout" />
         default:
             return null;
     }
