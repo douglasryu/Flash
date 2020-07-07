@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "./Modal";
 import { connect } from "react-redux";
 import { openModal } from "../actions/modalActions";
@@ -10,6 +10,12 @@ const Cart = (props) => {
     { name: "camera", price: 100 },
     { name: "bag", price: 50 },
   ];
+
+  let total = 0;
+
+  for (let item in cart) {
+    total += item.price;
+  }
 
   return (
     <>
