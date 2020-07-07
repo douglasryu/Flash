@@ -2,21 +2,33 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
 }
 
 .nav__logo {
     margin-right: auto;
     margin-left: 20px;
+    font-size: 20px;
 }
+
 
 .logo {
     display: inline-block;
     width: 30px;
+    margin: 10px 0px 0px 10px;
+}
+
+.nav__search--icon {
+    position: relative;
+    top: 6px;
 }
 
 .nav__search {
     margin-right: auto;
     border: 1px solid black;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid #efefef;
 }
 
 .nav__account {
@@ -25,4 +37,66 @@
 
 .nav__item {
     margin-right: 20px;
+}
+
+
+/* Modal-Signin CSS */
+.modal__header {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0px 5px 5px;
+    margin-left: 5px;
+}
+
+.form__container {
+    padding: 0px 0px 5px 5px;
+}
+
+.form__input {
+    padding: 15px 0px 15px 0px;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.form__button {
+    display: block;
+    margin: 15px auto 15px auto;
+    background-color: aqua;
+    padding: 5px 120px 5px 120px;
+}
+
+.demo__button {
+    display: block;
+    background-color: aqua;
+    margin: 0px auto 10px auto;
+    padding: 5px 102px 5px 102px;
+}
+
+/* Modal-Signup CSS*/
+.form__input-name-container {
+    margin: 10px 0px 0px 0px;
+    display: flex;
+}
+
+.form__input--firstname {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px 0px 15px 5px;
+    font-size: 18px;
+}
+
+.form__input--lastname {
+    display: inline-block;
+    position: relative;
+    right: 40px;
+    padding: 15px 0px 15px 0px;
+    font-size: 18px;
+}
+
+.signupform__button {
+    display: block;
+    background-color: aqua;
+    margin: 0px auto 10px auto;
+    padding: 5px 102px 5px 102px;
+    /* font-size: 18px; */
 }

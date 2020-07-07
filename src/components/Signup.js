@@ -27,12 +27,12 @@ const Signup = props => {
             <div className="modal__header">Become a member</div>
             <form className="form__container" onSubmit={handleSubmit}>
                 <div className="form__input-name-container">
-                    <input type="text" onChange={updateFirstName} value={firstName} className="form__input-firstname" placeholder="First name" />
-                    <input type="text" onChange={updateLastName} value={lastName} className="form__input-lastname" placeholder="Last name" />
+                    <input type="text" onChange={updateFirstName} value={firstName} className="form__input--firstname" placeholder="First name" />
+                    <input type="text" onChange={updateLastName} value={lastName} className="form__input--lastname" placeholder="Last name" />
                 </div>
                 <input type="email" onChange={updateEmail} value={email} className="form__input" placeholder="Email address" />
                 <input onChange={updatePassword} value={password} className="form__input" placeholder="Create a password" />
-                <button className="form__button">Join Flash</button>
+                <button className="signupform__button">Join Flash</button>
             </form>
         </>
     );
