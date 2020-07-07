@@ -21,6 +21,7 @@ const Modal = props => {
             break;
         case "checkout":
             component = <CheckOut type="checkout" />
+            break;
         default:
             return null;
     }

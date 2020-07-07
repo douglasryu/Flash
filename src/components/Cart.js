@@ -1,10 +1,12 @@
 import React from 'react';
 import Modal from "./Modal";
+import { connect } from 'react-redux';
+import { openModal } from '../actions/modalActions';
 import Navigation from "./Navigation";
 import CategoryBar from "./CategoryBar";
 
 
-const Cart = () => {
+const Cart = (props) => {
 
     return (
         <>
@@ -28,7 +30,7 @@ const Cart = () => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        openModal = (modal) => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal))
     }
 }
 
