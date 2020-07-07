@@ -8,7 +8,7 @@
     top: 0px;
     left: 0px;
     background-color: #ffffff;
-    z-index: 4;
+    z-index: 3;
     width: 100%;
 }
 
@@ -67,13 +67,15 @@
 .form__button {
     display: block;
     margin: 15px auto 15px auto;
-    background-color: aqua;
+    color: #ffffff;
+    background-color: #004387;
     padding: 5px 120px 5px 120px;
 }
 
 .demo__button {
     display: block;
-    background-color: aqua;
+    color: #ffffff;
+    background-color: #004387;
     margin: 0px auto 10px auto;
     padding: 5px 102px 5px 102px;
 }
@@ -101,7 +103,8 @@
 
 .signupform__button {
     display: block;
-    background-color: aqua;
+    color: #ffffff;
+    background-color: #004387;
     margin: 0px auto 10px auto;
     padding: 5px 102px 5px 102px;
     /* font-size: 18px; */

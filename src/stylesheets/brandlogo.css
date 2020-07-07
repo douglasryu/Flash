@@ -74,6 +74,9 @@
 .brand__image {
     width: 100%;
     height: 260px;
+    transition: transform 4s;
+    transition-timing-function: ease-out;
+    /* transition: all 5.5s ease-out 2s; */
 }
 
 .leica {
@@ -133,3 +136,11 @@
     z-index: 2;
     filter: invert(99%) sepia(7%) saturate(102%) hue-rotate(133deg) brightness(116%) contrast(100%);
 }
+
+.brand__image:hover {
+    /* width: 120%;
+    height: 350px; */
+    transform: scale(1.2);
+}
+
+

@@ -23,11 +23,13 @@ const MainCarousel = props => {
 
 
     return (
-        <Carousel className="mainCarousel__container">
-            {
-                items.map(item => <Item item={item} />)
-            }
-        </Carousel >
+        <div className="mainCarousel">
+            <Carousel className="mainCarousel__container">
+                {
+                    items.map(item => <Item item={item} />)
+                }
+            </Carousel >
+        </div>
     );
 }
 

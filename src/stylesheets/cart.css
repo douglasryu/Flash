@@ -20,7 +20,8 @@
 
 .checkout__button {
   display: block;
-  background-color: aqua;
+  color: #ffffff;
+  background-color: #004387;
   margin: 0px auto 10px auto;
   padding: 5px 102px 5px 102px;
 }
@@ -71,7 +72,8 @@
 .cart__checkout {
   text-align: center;
   display: block;
-  background-color: aqua;
+  color: #ffffff;
+  background-color: #004387;
   margin: 0px auto 10px auto;
   padding: 5px 102px 5px 102px;
   width: 100px;
