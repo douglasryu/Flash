@@ -9,6 +9,7 @@ import "./stylesheets/modal.css";
 import "./stylesheets/main.css";
 import "./stylesheets/brandlogo.css";
 import "./stylesheets/productpage.css";
+import "./stylesheets/footer.css";
 
 import App from "./App";
 

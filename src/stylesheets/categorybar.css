@@ -4,7 +4,10 @@
     justify-content: space-evenly;
     background-color: #004387;
     padding: 16px;
-
+    margin-top: 6px;
+    position: fixed;
+    z-index: 4;
+    width: 100%;
 }
 
 .nav_dropdown {

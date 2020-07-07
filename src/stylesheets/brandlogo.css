@@ -1,40 +1,135 @@
 .brand__logos--outer {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .brand__logos--container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    /* position: relative; */
 }
 
 .brand__logo--canon {
+    position: relative;
     grid-column: 1/2;
     grid-row: 1/2;
+    overflow: hidden;
+    height: 240px;
+    width: 600px;
+    margin: 10px 10px 10px 0px;
 }
 
 .brand__logo--nikon {
+    position: relative;
     grid-column: 2/3;
     grid-row: 1/2;
+    overflow: hidden;
+    height:240px;
+    width: 600px;
+    margin: 10px 0px 10px 10px;
 }
 
 .brand__logo--sony {
+    position: relative;
     grid-column: 1/2;
     grid-row: 2/3;
-}
-
-.brand__logo--fujifilm {
-    grid-column: 2/3;
-    grid-row: 2/3;
+    overflow: hidden;
+    height: 240px;
+    width: 600px;
+    margin: 10px 10px 10px 0px;
 }
 
 .brand__logo--olympus {
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    overflow: hidden;
+    height: 240px;
+    width: 600px;
+    margin: 10px 0px 10px 10px;
+}
+
+.brand__logo--fujifilm {
+    position: relative;
     grid-column: 1/2;
     grid-row: 3/4;
+    overflow: hidden;
+    height: 240px;
+    width: 600px;
+    margin: 10px 10px 10px 0px;
 }
 
 .brand__logo--leica {
+    position: relative;
     grid-column: 2/3;
     grid-row: 3/4;
+    overflow: hidden;
+    height: 240px;
+    width: 600px;
+    margin: 10px 0px 10px 10px;
+}
+
+.brand__image {
+    width: 100%;
+    height: 260px;
+}
+
+.leica {
+    position: relative;
+    bottom: 25px;
+    height: 295px;
+}
+
+.logo__canon {
+    width: 150px;
+    position: absolute;
+    z-index: 2;
+    top: 160px;
+    right: 10px;
+}
+
+.logo__nikon {
+    width: 140px;
+    position: absolute;
+    top: 140px;
+    right: 10px;
+    z-index: 2;
+    filter: invert(74%) sepia(88%) saturate(1133%) hue-rotate(12deg) brightness(100%) contrast(101%);
+} 
+
+.logo__sony {
+    width: 150px;
+    position: absolute;
+    top: 200px;
+    right: 10px;
+    z-index: 2;
+    filter: invert(99%) sepia(7%) saturate(102%) hue-rotate(133deg) brightness(116%) contrast(100%);
+}
+
+.logo__olympus {
+    width: 180px;
+    position: absolute;
+    top: 195px;
+    right: 0px;
+    z-index: 2;
+}
+
+.logo__fujifilm {
+    width: 160px;
+    position: absolute;
+    top: 135px;
+    right: 10px;
+    z-index: 2;
+    filter: invert(21%) sepia(77%) saturate(7191%) hue-rotate(343deg) brightness(95%) contrast(97%);
+}
+
+.logo__leica {
+    width: 140px;
+    position: absolute;
+    top: 130px;
+    right: 15px;
+    z-index: 2;
+    filter: invert(99%) sepia(7%) saturate(102%) hue-rotate(133deg) brightness(116%) contrast(100%);
 }
