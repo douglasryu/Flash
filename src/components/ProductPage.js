@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReviewDiv from './ReviewDiv'
 import Modal from "./Modal";
 import Navigation from "./Navigation";
