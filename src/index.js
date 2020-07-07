@@ -9,8 +9,10 @@ import "./stylesheets/modal.css";
 import "./stylesheets/main.css";
 import "./stylesheets/brandlogo.css";
 import "./stylesheets/productpage.css";
+import "./stylesheets/footer.css";
 import "./stylesheets/cart.css";
 import "./stylesheets/productlist.css";
+
 
 import App from "./App";
 

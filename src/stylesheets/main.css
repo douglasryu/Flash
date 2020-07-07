@@ -1,6 +1,7 @@
 .mainCarousel__container {
     width: 60%;
     margin: 40px auto 0px auto;
+    padding-top: 100px;
 }
 
 .mainCarousel__imgContainer {
@@ -13,6 +14,7 @@
     width: 1500px;
     height: 200px;
     margin: 20px auto 0px auto;
+    z-index: -1;
 }
 
 .featured__item {
