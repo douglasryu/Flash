@@ -1,14 +1,21 @@
 import React from 'react'
 
 const ReviewDiv = (props) => {
+
+    let list = [{author: 'Jane Doe', content: 'I reviewed this!'}, {author: 'Jane Doe', content: 'I reviewed this twice!'}]
+
     return (
         <div className='products__review-container'>
-            {/* Todo - map this.state.reviews for productID into separate divs */}
-            <div className='products__review-block'>
-                <div className='products__review-author'>Author</div>
-                <div className='products__review-content'>Review content</div>
-                <button className='products__review-button'>Delete/Edit (maybe)</button>
-            </div>
+            {list.map((review, i) => {
+                return(
+                    <div id={i} className='products__review-block'>
+                        <div className='products__review-author'>{review.author}</div>
+                        <div className='products__review-content'>{review.content}</div>
+                        <button className='products__review-button'>Delete/Edit (maybe)</button>
+                    </div>
+                )
+            })}
+            
 
             <form className='products__review-form'>
                 {/* onSubmit = this.postReview function */}
