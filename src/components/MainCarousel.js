@@ -37,7 +37,7 @@ const Item = props => {
     return (
         <>
             <Paper className="mainCarousel__imgContainer">
-                <img className="mainCarousel__img" src={require(`../assets/carousel/${props.item.name}.jpg`)} />
+                <img className="mainCarousel__img" src={require(`../assets/carousel/${props.item.name}.jpg`)} alt="main-img" />
             </Paper>
         </>
     );

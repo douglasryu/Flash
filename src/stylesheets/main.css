@@ -14,8 +14,8 @@
 }
 
 .featured__carousel {
-    /* width: 80%; */
-    width: 1200px;
+    /* width: 1200px; */
+    width: 80%;
     height: 200px;
     margin: 20px auto 0px auto;
     z-index: 0;
@@ -25,21 +25,9 @@
     background-color: yellow;
     height: 200px;
     /* width: 90%; */
-    /* width: 200px; */
+    width: 200px;
     overflow: hidden;
     margin-right: 10px;
     margin-left: 10px;
 }
 
-.featured__item--img {
-    /* width: 300px; */
-}
-
-/* @media screen and (max-width: 1550px) {
-    .featured__carousel {
-    width: 80%;
-    width: 800px;
-    height: 200px;
-    margin: 20px auto 0px auto;
-}
-} */
