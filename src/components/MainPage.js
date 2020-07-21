@@ -12,7 +12,7 @@ const MainPage = props => {
     return (
         <>
             <Modal />
-            <Navigation />
+            <Navigation {...props} />
             <CategoryBar />
             <MainCarousel />
             <FeaturedItem />

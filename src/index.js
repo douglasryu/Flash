@@ -12,6 +12,7 @@ import "./stylesheets/productpage.css";
 import "./stylesheets/footer.css";
 import "./stylesheets/cart.css";
 import "./stylesheets/productlist.css";
+import "./stylesheets/profile.css";
 
 
 import App from "./App";

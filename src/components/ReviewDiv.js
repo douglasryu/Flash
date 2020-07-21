@@ -1,42 +1,111 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { fetchReviews, createReview } from "../actions/reviewActions";
 
 const ReviewDiv = (props) => {
-  let list = [
-    { author: "Jane Doe", content: "I reviewed this!" },
-    { author: "Jane Doe", content: "I reviewed this twice!" },
-  ];
+    let reviews = {};
+    let newReviews = [];
+    let [userRev, createRev] = useState('');
 
-  return (
-    <div className="products__review-container">
-      {list.map((review, i) => {
-        return (
-          <div key={i} className="products__review-block">
-            <div className="products__review-author">{review.author}</div>
-            <div className="products__review-content">{review.content}</div>
-            <button className="products__review-button">
-              Delete/Edit (maybe)
-            </button>
-          </div>
-        );
-      })}
+    if (props.reviews !== undefined) {
+        reviews = props.reviews;
 
-      <form className="products__review-form">
-        {/* onSubmit = this.postReview function */}
-        <textarea
-          className="products__review-field"
-          type="text"
-          placeholder="Submit a review"
-        ></textarea>
-        <button className="products__review-submit">Submit</button>
-      </form>
-    </div>
-  );
+        Object.values(reviews).forEach((item) => {
+            newReviews.push(item)
+        });
+    }
+
+    const handleReview = (e) => {
+        createRev(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        let userId = props.sessionId
+        let firstName = props.firstName
+        let lastName = props.lastName
+        let productId = props.id
+        let reviewBody = userRev
+
+        await props.createReview(userId, firstName, lastName, productId, reviewBody);
+
+        await props.fetchReviews(props.id);
+        createRev('');
+    }
+
+
+    if (newReviews.length === 0 && !props.firstName) return null;
+
+    if (newReviews.length === 0) return (
+        <div className="products__review-container">
+            <form className="products__review-form">
+                <textarea
+                    onChange={handleReview}
+                    className="products__review-field"
+                    type="text"
+                    placeholder="Submit a review"
+                    value={userRev}
+                ></textarea>
+                <button onClick={handleSubmit} className="products__review-submit">Submit</button>
+            </form>
+        </div>
+    )
+
+    if (!props.firstName && newReviews.length > 0) return (
+        <div className="products__review-container">
+            {newReviews.map((review, i) => {
+                return (
+                    <div key={i} className="products__review-block">
+                        <div className="products__review-author">{`${review.firstName} ${review.lastName}`}</div>
+                        <div className="products__review-content">{review.reviewBody}</div>
+                    </div>
+                );
+            })}
+        </div>
+    )
+
+
+    return (
+        <div className="products__review-container">
+            {newReviews.map((review, i) => {
+                return (
+                    <div key={i} className="products__review-block">
+                        <div className="products__review-author">{`${review.firstName} ${review.lastName}`}:</div>
+                        <div className="products__review-content">{review.reviewBody}</div>
+                    </div>
+                );
+            })}
+
+            <form className="products__review-form">
+                <textarea
+                    onChange={handleReview}
+                    className="products__review-field"
+                    type="text"
+                    placeholder="Submit a review"
+                    value={userRev}
+                ></textarea>
+                <button onClick={handleSubmit} className="products__review-submit">Submit</button>
+            </form>
+        </div>
+    );
 };
 
-//Todo - get data from backend, set to this.state.reviews
 
-//todo Post review function
+const mapStateToProps = (state) => {
+    return {
+        reviews: state.reviews,
+        sessionId: state.session.id,
+        firstName: state.session.firstName,
+        lastName: state.session.lastName,
+    };
+};
 
-//Todo, possible Edit/Delete functions
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchReviews: (id) => dispatch(fetchReviews(id)),
+        createReview: (userId, firstName, lastName, productId, reviewBody) => dispatch(createReview(userId, firstName, lastName, productId, reviewBody)),
+    };
+};
 
-export default ReviewDiv;
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewDiv);

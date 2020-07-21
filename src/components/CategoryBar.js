@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../stylesheets/categorybar.css'
 
 
@@ -8,58 +9,37 @@ const CategoryBar = () => {
         <>
             <div className="category__bar">
                 <div className="nav_dropdown">Cameras
-                <ul className="dropdown_menu">
-                    <li>Mirrorless Cameras</li>
-                    <li>DSLR and SLR Cameras</li>
-                    <li>Digital Point and Shoot Cameras</li>
-                    <li>Instant Cameras</li>
-                    <li>Specialty Cameras</li>
-                </ul>
+                    <div className="dropdown_menu">
+                        <Link to='/category/1'>DSLR and SLR Cameras</Link>
+                        <Link to='/category/2'>Mirrorless Cameras</Link>
+                        <Link to='/category/3'>Range Finder Cameras</Link>
+                    </div>
                 </div>
                 <div className="nav_dropdown">Lens
-                <ul className="dropdown_menu">
-                    <li>Mirrorless Lens</li>
-                    <li>SLR Lens</li>
-                    <li>Medium Format Lens</li>
-                    <li>Range Finder Lens</li>
-                    <li>Specialty Lens</li>
-                </ul>
-                </div>
-                <div className="nav_dropdown">Tripods & Supports
-                <ul className="dropdown_menu">
-                    <li>Tripods</li>
-                    <li>Tripod Heads</li>
-                    <li>Monopods</li>
-                    <li>Quick Release</li>
-                    <li>Mounts & Supports</li>
-                </ul>
+                    <div className="dropdown_menu">
+                        <Link to='/category/4'>DSLR Lens</Link>
+                        <Link to='/category/5'>Mirrorless Lens</Link>
+                        <Link to='/category/6'>Range Finder Lens</Link>
+                    </div>
                 </div>
                 <div className="nav_dropdown">Lighting & Studio
-                <ul className="dropdown_menu">
-                    <li>Flashes &  On-Camera Lighteing</li>
-                    <li>Continuous Lighting</li>
-                    <li>Monolights & Strobes</li>
-                    <li>Light Modifiers</li>
-                    <li>Light Stands</li>
-                </ul>
+                    <div className="dropdown_menu">
+                        <Link to='/category/7'>Flashes & On-Camera Lighting</Link>
+                        <Link to='/category/8'>Studio Lighting</Link>
+                    </div>
                 </div>
                 <div className="nav_dropdown">Bags & Cases
-                <ul className="dropdown_menu">
-                    <li>Canan</li>
-                    <li>Nikon</li>
-                    <li>Sony</li>
-                    <li>Fujifilm</li>
-                    <li>Panasonic</li>
-                </ul>
+                    <div className="dropdown_menu">
+                        <Link to='/category/9'>Bags</Link>
+                        <Link to='/category/10'>Cases</Link>
+                    </div>
                 </div>
                 <div className="nav_dropdown">Camera Accessories
-                <ul className="dropdown_menu">
-                    <li>Camera Batteries</li>
-                    <li>Battery Grips</li>
-                    <li>Camera Battery Chargers</li>
-                    <li>Remote Controls</li>
-                    <li>Camera Grips</li>
-                </ul>
+                    <div className="dropdown_menu">
+                        <Link to='/category/11'>Camera Batteries</Link>
+                        <Link to='/category/12'>Tripods</Link>
+                        <Link to='/category/13'>Misc</Link>
+                    </div>
                 </div>
             </div>
         </>

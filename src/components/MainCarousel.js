@@ -26,7 +26,7 @@ const MainCarousel = props => {
         <div className="mainCarousel">
             <Carousel className="mainCarousel__container">
                 {
-                    items.map(item => <Item item={item} />)
+                    items.map(item => <Item key={item.name} item={item} />)
                 }
             </Carousel >
         </div>

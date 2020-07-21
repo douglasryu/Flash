@@ -9,17 +9,23 @@ const Signup = props => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     const updateFirstName = (event) => setFirstName(event.target.value);
     const updateLastName = (event) => setLastName(event.target.value);
     const updateEmail = (event) => setEmail(event.target.value);
     const updatePassword = (event) => setPassword(event.target.value);
+    const updateConfirmPassword = (event) => setConfirmPassword(event.target.value);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await props.createUser(firstName, lastName, email, password);
-        props.closeModal();
-        window.location.reload();
+        if (password === confirmPassword) {
+            await props.createUser(firstName, lastName, email, password);
+            props.closeModal();
+            window.location.reload();
+        } else {
+            alert("Passwords must match!");
+        }
     };
 
     return (
@@ -31,7 +37,8 @@ const Signup = props => {
                     <input type="text" onChange={updateLastName} value={lastName} className="form__input--lastname" placeholder="Last name" />
                 </div>
                 <input type="email" onChange={updateEmail} value={email} className="form__input" placeholder="Email address" />
-                <input onChange={updatePassword} value={password} className="form__input" placeholder="Create a password" />
+                <input type="password" onChange={updatePassword} value={password} className="form__input" placeholder="Create a password" />
+                <input type="password" onChange={updateConfirmPassword} value={confirmPassword} className="form__input" placeholder="Confirm password" />
                 <button className="signupform__button">Join Flash</button>
             </form>
         </>

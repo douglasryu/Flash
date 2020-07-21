@@ -1,4 +1,4 @@
-import { baseUrl } from '../config';
+import { baseUrl } from "../config";
 
 export const TOKEN_KEY = "flash/authentication/token";
 export const SET_TOKEN = "flash/authentication/SET_TOKEN";
@@ -6,10 +6,10 @@ export const REMOVE_TOKEN = "flash/authentication/REMOVE_TOKEN";
 
 const removeToken = () => ({ type: REMOVE_TOKEN });
 const setToken = (payload) => {
-    return ({ type: SET_TOKEN, payload });
-}
+    return { type: SET_TOKEN, payload };
+};
 
-export const loadToken = () => dispatch => {
+export const loadToken = () => (dispatch) => {
     const token = window.localStorage.getItem(TOKEN_KEY);
     const user = window.localStorage.getItem("flash/authentication/USER_ID");
     const firstName = window.localStorage.getItem("flash/authentication/firstName");
@@ -20,7 +20,7 @@ export const loadToken = () => dispatch => {
 };
 
 export const createUser = (firstName, lastName, email, password) => async dispatch => {
-    const response = await fetch(`${baseUrl}/users/`, {
+    const response = await fetch(`${baseUrl}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ firstName, lastName, email, password }),
@@ -28,16 +28,16 @@ export const createUser = (firstName, lastName, email, password) => async dispat
 
     if (response.ok) {
         const payload = await response.json();
-        window.localStorage.setItem(TOKEN_KEY, payload.token);
-        window.localStorage.setItem("flash/authentication/USER_ID", payload.user);
-        window.localStorage.setItem("flash/authentication/firstName", payload.firstName);
-        window.localStorage.setItem("flash/authentication/lastName", payload.lastName);
+        window.localStorage.setItem(TOKEN_KEY, payload.access_token);
+        window.localStorage.setItem("flash/authentication/USER_ID", payload.user.id);
+        window.localStorage.setItem("flash/authentication/firstName", payload.user.firstName);
+        window.localStorage.setItem("flash/authentication/lastName", payload.user.lastName);
         dispatch(setToken(payload));
     }
-}
+};
 
 export const login = (email, password) => async dispatch => {
-    const response = await fetch(`${baseUrl}/users/session`, {
+    const response = await fetch(`${baseUrl}/api/users/session`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -45,11 +45,11 @@ export const login = (email, password) => async dispatch => {
 
     if (response.ok) {
         const payload = await response.json();
-        window.localStorage.setItem(TOKEN_KEY, payload.token);
-        window.localStorage.setItem("flash/authentication/USER_ID", payload.user);
-        window.localStorage.setItem("flash/authentication/firstName", payload.firstName);
-        window.localStorage.setItem("flash/authentication/lastName", payload.lastName);
-        dispatch(setToken(payload));
+        window.localStorage.setItem(TOKEN_KEY, payload.access_token);
+        window.localStorage.setItem("flash/authentication/USER_ID", payload.user.id);
+        window.localStorage.setItem("flash/authentication/firstName", payload.user.firstName);
+        window.localStorage.setItem("flash/authentication/lastName", payload.user.lastName);
+        dispatch(setToken({ token: payload.access_token, user: payload.user.id, firstName: payload.user.firstName, lastName: payload.user.lastName }));
     }
 };
 
@@ -58,6 +58,7 @@ export const logout = () => (dispatch) => {
     window.localStorage.removeItem("flash/authentication/USER_ID");
     window.localStorage.removeItem("flash/authentication/firstName");
     window.localStorage.removeItem("flash/authentication/lastName");
+    window.localStorage.removeItem("flash/cart");
     dispatch(removeToken());
     window.location.href = "/";
 };
