@@ -70,7 +70,7 @@ const ProductPage = (props) => {
                         <div className="products__price">${(price / 100).toFixed(2)}</div>
 
                         <form className="products__cart--container" onSubmit={handleSubmit}>
-                            <label className="products__label">Quantity: <input className="products__quantity" onChange={handleQuantity} type="number" min="0" placeholder="0" /></label>
+                            <label className="products__label">Quantity: <input className="products__quantity" onChange={handleQuantity} type="number" min="1" placeholder="1" /></label>
                             <button className="products__cart">Add to Cart</button>
                         </form>
                     </div>

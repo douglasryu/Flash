@@ -5,12 +5,18 @@ import { openModal } from "../actions/modalActions";
 import Navigation from "./Navigation";
 import CategoryBar from "./CategoryBar";
 import { removeFromCart } from "../actions/cartButtonActions";
-import { TableSortLabel } from "@material-ui/core";
+import MuiAlert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
 
 const Cart = (props) => {
     const currentUser = window.localStorage.getItem("flash/authentication/USER_ID");
     const cartItemsArray = props.cartItemsArray;
     const [cartArray, setCartArray] = useState(cartItemsArray);
+    const [error, setError] = useState("");
+    const [open, setOpen] = useState(false);
     // const [quantities, setQuantities] = useState("");
     const targetProducts = cartItemsArray.map(item => props.productsObj[item]);
     let total = 0;
@@ -40,6 +46,26 @@ const Cart = (props) => {
     // console.log(targetProducts);
     let checkRender = new Set();
 
+    const handleClose = (reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false);
+    };
+
+    const Alert = props => {
+        return <MuiAlert elevation={6} variant="filled" {...props} />;
+    }
+
+    const handleCheckout = (event) => {
+        if (total === 0) {
+            setError("Please add at least one item to the cart!");
+            setOpen(true);
+        } else {
+            props.openModal("checkout")
+        }
+    }
+
     return (
         <>
             <Navigation />
@@ -65,10 +91,25 @@ const Cart = (props) => {
                     }
                 })}
                 <div className="cart__total">Total: $ <div className="cart__total--price">{(total / 100).toFixed(2)}</div></div>
-                {currentUser ? <button className="cart__checkout--button" onClick={() => props.openModal("checkout")}>Checkout</button> : <button onClick={() => props.openModal("signin")} className="cart__checkout--button">Sign In</button>}
+                {currentUser ? <button className="cart__checkout--button" onClick={handleCheckout}>Checkout</button> : <button onClick={() => props.openModal("signin")} className="cart__checkout--button">Sign In</button>}
 
             </div>
             <Modal total={total} setCartArray={setCartArray} {...props} />
+            <Snackbar
+                className="snackbar"
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                open={open}
+                autoHideDuration={2000}
+                onClose={handleClose}
+                action={
+                    <React.Fragment>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                            <CloseIcon fontSize="small" />
+                        </IconButton>
+                    </React.Fragment>
+                }>
+                <Alert onClose={handleClose} severity="error">{error}</Alert>
+            </Snackbar>
         </>
     );
 };

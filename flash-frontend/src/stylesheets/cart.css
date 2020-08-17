@@ -26,18 +26,19 @@
 }
 
 .checkout__button {
-    padding: 15px 80px 15px 80px;
+    padding: 5px 60px 5px 60px;
     background-color: #004387;
     color: white;
     text-align: center;
     display: block;
     margin: 0px auto 10px auto;
     border-radius: 4px;
+    border: 3px solid #004387;
+    transition: all 0.3s;
 }
 
 .checkout__button:hover {
     background-color: #2b65a0;
-  /* background-color: #fc5d37; */
 }
 
 .checkout__total-container {
@@ -139,5 +140,120 @@
     text-align: center;
     display: block;
     margin: 0px auto 10px auto;
+    border: 3px solid #004387;
     border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.cart__checkout--button:hover {
+    background-color: rgba(0, 67, 135, 0.8);
+}
+
+
+.checkout__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.checkout__billing-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 24px;
+    border-bottom: 1px dotted #636363;
+    border-right: 1px dotted #636363;
+    background-color: #f3f3f3;
+}
+
+.checkout__form {
+    width: 306px;
+    background-color: #FFFFFF;
+    padding: 14px 10px 11px;
+    margin: 8px 0px 0px;
+    border: 1px solid #cccccc;
+    font-weight: 600;
+    color: #111111;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.checkout__inner{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.checkout__form-zip {
+    width: 55px;
+    margin-right: 24px;
+}
+
+
+.checkout__form-city{
+    width: 205px;
+}
+
+.checkout__card-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 100%;
+    padding: 24px;
+    border-bottom: 1px dotted #636363;
+    background-color: #f3f3f3;
+}
+
+.checkout__card {
+    width: 306px;
+    background-color: #FFFFFF;
+    padding: 14px 10px 11px;
+    margin: 8px 0px 0px;
+    border: 1px solid #cccccc;
+    font-weight: 600;
+    color: #111111;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.card__info {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout__card-date {
+    width: 41px;
+    background-color: #FFFFFF;
+    padding: 14px 10px 11px;
+    margin: 12px 4px;
+    border: 1px solid #cccccc;
+    font-weight: 600;
+    color: #111111;
+    border-radius: 3px;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.checkout__card-cvv {
+    display: flex;
+    width: 35px;
+    background-color: #FFFFFF;
+    padding: 14px 10px 11px;
+    margin: 12px 8px 12px 60px;
+    border: 1px solid #cccccc;
+    font-weight: 600;
+    color: #111111;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.checkout__total-name {
+    text-align: center;
+}
+
+.checkout__total {
+    text-align: center;
 }

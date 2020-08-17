@@ -36,7 +36,7 @@ const Signin = props => {
         event.preventDefault();
         await props.login("demouser@demouser.com", "demouser");
         props.closeModal();
-        // window.location.reload();
+        window.location.reload(true);
     }
 
     const handleClose = (reason) => {

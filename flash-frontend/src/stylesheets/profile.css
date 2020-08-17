@@ -61,29 +61,47 @@
 .profile__transaction {
     border: 1px solid rgba(0, 67, 135, 0.3);
     border-radius: 4px;
-    /* width: 600px; */
+    width: 900px;
     margin: 0px auto 20px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
+}
+
+.profile__item {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    /* border: 1px dotted black; */
 }
 
 .profile__product--name {
     font-weight: 600;
-    margin: 0px 0px 10px 10px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    overflow-wrap: normal;
+    /* width: 500px; */
+    /* margin: 0px 0px 10px 10px;
+    margin-bottom: 10px; */
 }
 
 .profile__product--image {
-    width: 250px;
-    margin: 0px auto 20px auto;
+    width: 150px;
+    margin: 0px 0px 0px 40px;
     /* align-self: center; */
+}
+
+.profile__product--price {
+    margin: 0px 40px 0px 0px;
 }
 
 .profile__transaction--price {
     font-size: 18px;
     margin-top: 10px;
     text-align: right;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 1240px) {

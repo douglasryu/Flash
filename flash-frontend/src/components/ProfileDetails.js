@@ -12,6 +12,7 @@ const ProfileDetails = props => {
     const productsObj = props.productsList;
 
     const displayName = props.firstName === "demo" ? "Guest" : props.firstName === "null" ? "" : `${props.firstName} ${props.lastName}.`;
+    if (!props.productsList) return null;
 
     return (
         <>
@@ -29,9 +30,10 @@ const ProfileDetails = props => {
                         <div key={i} className="profile__transaction">
                             {transaction.map(instance => {
                                 return (
-                                    <div key={instance}>
-                                        <div className="profile__product--name">{productsObj[instance].name}</div>
+                                    <div className="profile__item" key={instance}>
                                         <img className="profile__product--image" src={productsObj[instance].imgUrl} alt="profile-img" />
+                                        <div className="profile__product--name">{productsObj[instance].name}</div>
+                                        <div className="profile__product--price">${(productsObj[instance].price / 100).toFixed(2)}</div>
                                     </div>
                                 );
                             })}
