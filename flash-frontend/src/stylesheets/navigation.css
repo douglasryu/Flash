@@ -1,0 +1,190 @@
+.nav__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #ffffff;
+    z-index: 3;
+    width: 100%;
+}
+
+.nav__logo {
+    margin-right: auto;
+    margin-left: 20px;
+    font-size: 20px;
+    position: relative;
+    bottom: 10px;
+    font-weight: 600;
+}
+
+.logo {
+    display: inline-block;
+    width: 30px;
+    margin: 10px 0px 0px 10px;
+    position: relative;
+    top: 5px;
+}
+
+.nav__account {
+    margin-left: auto;
+}
+
+.nav__signin {
+    margin-left: auto;
+    padding-left: 13px;
+}
+
+.nav__item {
+    margin-right: 20px;
+}
+
+
+/* Main Search CSS */
+.search__form {
+    display: flex;
+}
+
+.search__icon {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    left: 35px;
+}
+
+.searchbar__container {
+    display: inline-block;
+}
+
+.search__input {
+    width: 300px;
+    border: 1px solid rgba(0, 67, 135, 0.3);
+    border-radius: 4px;
+    padding: 7px 0px 7px 40px;
+    position: relative;
+    /* border-radius: 4px; */
+}
+
+.search__form-button {
+    margin-left: 20px;
+    padding: 0px 8px;
+    border: 3px solid #004387;
+    border-radius: 2px;
+    color: #ffffff;
+    background-color: #004387;
+    transition: all 0.3s;
+}
+
+.search__form-button:hover {
+    background-color: rgba(0, 67, 135, 0.8);
+}
+
+.search__suggestion-wrapper {
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 3;
+    border-radius: 2px;
+}
+
+.search__suggestion {
+    width: 318px;
+    padding: 10px 0px 10px 24px;
+    font-size: 15px;
+    z-index: 6;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.15s;
+}
+
+.search__suggestion:hover {
+    background-color: rgba(0, 67, 135, 0.8);
+}
+
+
+/* Modal-Signin CSS */
+.modal__header {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 0px 5px 5px;
+    margin-left: 10px;
+    height: 50px;
+    margin-top: 100px;
+}
+
+.form__container {
+    padding: 0px 0px 5px 5px;
+}
+
+.form__input {
+    padding: 15px 0px 15px 10px;
+    font-size: 18px;
+    margin-left: 6px;
+    border: 1px solid rgba(0, 67, 135, 0.2);
+    border-radius: 4px;
+    width: 90%;
+    margin-bottom: 8px;
+}
+
+.form__button {
+    display: block;
+    margin: 20px auto 15px auto;
+    color: #ffffff;
+    background-color: #004387;
+    padding: 13px 119px 13px 119px;
+    position: relative;
+    right: 2px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.demo__button {
+    display: block;
+    color: #ffffff;
+    background-color: #004387;
+    margin: 0px auto 10px auto;
+    padding: 13px 101px 13px 101px;
+    border-radius: 4px;
+    position: relative;
+    right: 2px;
+    font-weight: 600;
+}
+
+/* Modal-Signup CSS*/
+.form__input-name-container {
+    margin: 0px 0px 8px 0px;
+    display: flex;
+}
+
+.form__input--firstname {
+    display: inline-block;
+    margin: 0px 5px 0px 6px;
+    padding: 15px 0px 15px 10px;
+    font-size: 18px;
+    border: 1px solid rgba(0, 67, 135, 0.2);
+    border-radius: 4px;
+    width: 124px;
+}
+
+.form__input--lastname {
+    display: inline-block;
+    padding: 15px 0px 15px 10px;
+    font-size: 18px;
+    border: 1px solid rgba(0, 67, 135, 0.2);
+    border-radius: 4px;
+    width: 123px;
+}
+
+.signupform__button {
+    display: block;
+    color: #ffffff;
+    background-color: #004387;
+    margin: 15px auto 10px auto;
+    padding: 13px 101px 13px 101px;
+    border-radius: 4px;
+    position: relative;
+    right: 2px;
+    font-weight: 600;
+}
